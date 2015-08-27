@@ -23,36 +23,55 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-8">
-            <div class="stage">
-                <div class="bar">
+
+            <div class="header">
+                <div class="question">
                     <div class="inner"></div>
                 </div>
+                <div class="question-sub">
+                    <div class="inner"></div>
+                </div>
+                <div class="score"></div>
+            </div>
+
+            <div class="stage">
             </div>
         </div>
         <div class="col-sm-4">
-            <div class="score">0</div>
-            <p>Speed:</p>
-            <select class="speed">
-                <option value="500">Super Speedy!</option>
-                <option value="1000">High speed</option>
-                <option value="1500">Fast</option>
-                <option value="2000" selected>Average</option>
-                <option value="2500">Sloth</option>
-            </select>
+            <div class="options">
+                <h1>Controls</h1>
+                <p>Speed:</p>
+                <select class="speed">
+                    <option value="300">Super Speedy!</option>
+                    <option value="600">High speed</option>
+                    <option value="1000">Fast</option>
+                    <option value="1500" selected>Average</option>
+                    <option value="2000">Sloth</option>
+                </select>
 
-            <p>Rows before game over:</p>
-            <select class="speed">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3" selected>3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
+                <p>Rows before game over:</p>
+                <select class="speed">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3" selected>3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button class="reset">Reset</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button class="start">Play</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
