@@ -21,25 +21,24 @@
 <body>
 
 <div class="container">
-    <div class="row">
-        <div class="col-sm-8">
-
-            <div class="header">
-                <div class="question">
-                    <div class="inner"></div>
-                </div>
-                <div class="question-sub">
-                    <div class="inner"></div>
-                </div>
-                <div class="score"></div>
-            </div>
-
-            <div class="stage">
-            </div>
+    <div class="header">
+        <div class="question">
+            <div class="inner"></div>
         </div>
-        <div class="col-sm-4">
-            <div class="options">
-                <h1>Controls</h1>
+        <div class="question-sub">
+            <div class="inner"></div>
+        </div>
+        <div class="score"></div>
+    </div>
+
+    <div class="stage-wrap">
+        <div class="stage">
+        </div>
+    </div>
+
+    <div class="options">
+        <div class="row">
+            <div class="col-sm-3">
                 <p>Speed:</p>
                 <select class="speed">
                     <option value="300">Super Speedy!</option>
@@ -49,35 +48,47 @@
                     <option value="2000">Sloth</option>
                 </select>
 
-                <p>Rows allowed before game over:</p>
+            </div>
+            <div class="col-sm-3">
+                <p>Rows before game over:</p>
                 <select class="rows">
                     <option value="1">1</option>
                     <option value="2">2</option>
-                    <option value="3" selected>3</option>
+                    <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
                     <option value="6">6</option>
                     <option value="7">7</option>
                     <option value="8">8</option>
                     <option value="9">9</option>
-                    <option value="10">10</option>
+                    <option value="10" selected>10</option>
                 </select>
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <button class="reset">Reset</button>
-                    </div>
-                    <div class="col-sm-6">
-                        <button class="start">Play</button>
-                    </div>
-                </div>
+            </div>
+            <div class="col-sm-3">
+                <button class="reset">Reset</button>
+            </div>
+            <div class="col-sm-3">
+                <button class="start">Play</button>
             </div>
         </div>
     </div>
 </div>
 
+<audio id="bed">
+    <source src="sounds/musicbed.mp3" type="audio/mpeg">
+</audio>
 
+<audio id="select">
+    <source src="sounds/select.mp3" type="audio/mpeg">
+</audio>
 
+<audio id="correct">
+    <source src="sounds/correct.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="incorrect">
+    <source src="sounds/incorrect.mp3" type="audio/mpeg">
+</audio>
 
 <script src="js/bower/jquery/dist/jquery.js"></script>
 <script src="js/bower/underscore/underscore.js"></script>

@@ -583,7 +583,7 @@
             ]
         },
         {
-            question: "ARVEL SUPERHEROES",
+            question: "MARVEL SUPERHEROES",
             num: 2,
             answers: [
                 { title: "WONDER WOMAN", correct: false },
@@ -910,6 +910,8 @@
         },
 
         clear: function () {
+            $(".stage .bar:first").stop();
+
             score = 0;
             tetris.updateScore();
 
@@ -921,14 +923,19 @@
             $(".question .inner").text("");
             $(".question-sub .inner").text("");
             $(".stage").empty();
+            var music = $("#bed").get(0);
+            music.pause();
+            music.currentTime = 0;
         },
 
         start: function () {
             tetris.updateScore();
             tetris.newQuestion();
+            $("#bed").get(0).play();
         },
 
         newQuestion: function () {
+            currentCorrectAnswers = 0;
             var q = questions[question];
 
             // if there a question left?
@@ -995,12 +1002,13 @@
             if (incorrectAnswers === rowsToFail) {
                 tetris.gameover(false);
             } else {
-
                 incorrectAnswers += 1;
 
                 question++;
                 tetris.newQuestion();
             }
+
+            $("#incorrect").get(0).play();
         },
 
         correct: function () {
@@ -1018,8 +1026,13 @@
                     question++;
                     tetris.newQuestion();
                 });
+
+                $("#correct").get(0).play();
             } else {
-                // there's still more to be done
+                var music = $("#select").get(0);
+                music.pause();
+                music.currentTime = 0;
+                music.play();
             }
         },
 

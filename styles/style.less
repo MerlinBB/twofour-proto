@@ -38,13 +38,12 @@
 
 html {
     min-height:100%;
-    background:url(img/bg.png) no-repeat center center;
-    background-size:cover;
+    background:#333;
 }
 
-@bh: 70px;
+@bh: 55px;
 @sh: 40px;
-@bborder: 10px;
+@bborder: 7px;
 
 .header {
     margin:@bh 0;
@@ -85,7 +84,7 @@ html {
         }
     }
     .score {
-        .position(absolute, -30px, 30px, auto, auto);
+        .position(absolute, -40px, 30px, auto, auto);
         .square(140px);
         background:url(img/score.png) no-repeat center center;
         line-height:140px;
@@ -96,12 +95,20 @@ html {
     }
 }
 
-.stage {
-    height:(@bh * 10);
-    background:rgba(0, 0, 0, 0.1);
-    border-radius:(@bh / 2);
-    position:relative;
-    overflow:hidden;
+.stage-wrap {
+    padding:7px;
+    border-radius:(@bh * 0.6);
+    background:linear-gradient(to bottom, #c6c8cb 0%, #edecef 40%, #6c6e71 100%);
+    box-shadow:0 2px 4px rgba(0, 0, 0, 0.5);
+    .stage {
+        background:url(img/bg.png) no-repeat center center;
+        background-size:cover;
+        height:(@bh * 10);
+        border-radius:(@bh / 2);
+        position:relative;
+        overflow:hidden;
+        box-shadow:inset 0 1px 4px 1px rgba(0, 0, 0, 0.4);
+    }
 }
 
 .bar {
@@ -124,6 +131,7 @@ html {
             text-align:center;
             color:#555;
             cursor:pointer;
+            .text-truncate();
             &:hover {
                 background:rgba(255, 255, 255, 0.1);
             }
@@ -152,22 +160,18 @@ html {
 }
 
 .options {
-    margin-top:(@bh * 3);
-    background:rgba(255, 255, 255, 0.5);
+    margin:(@bh / 2) 0;
+    background:#222;
     padding:@space;
-    border-radius:4px;
-    h1 {
-        margin-bottom:10px;
-        font-size:40px;
-        font-weight:100;
-        color:#009ADE;
-    }
+    border-radius:10px;
+    box-shadow:inset 0 1px 4px 1px rgba(0, 0, 0, 0.4);
     p {
         margin-bottom:5px;
+        color:#009ADE;
+        line-height:1;
     }
     select {
         width:100%;
-        margin-bottom:20px;
         option {
             padding:10px;
             font-size:18px;
@@ -180,7 +184,10 @@ html {
         padding:4px;
         border:0;
         background:#fff;
+        color:#009ADE;
         cursor:pointer;
+        margin-top:12px;
+        display:block;
         &:hover {
             background:#009ADE;
             color:#fff;
