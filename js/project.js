@@ -1049,7 +1049,7 @@
                     $(this).remove();
                     tetris.clear();
                 });
-            }, 2000);
+            }, 4000);
         },
 
         updateScore: function () {
