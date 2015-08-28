@@ -873,6 +873,8 @@
     var score = 0;
     var incorrectAnswers = 0;
     var currentCorrectAnswers = 0;
+    var playing = false;
+    var paused = false;
 
     var answerT = "" +
     "<div class=\"bar\">" +
@@ -918,6 +920,9 @@
             question = 0;
             incorrectAnswers = 0;
 
+            paused = false;
+            playing = false;
+
             questions = _.shuffle(questions);
 
             $(".question .inner").text("");
@@ -930,9 +935,27 @@
         },
 
         start: function () {
-            tetris.updateScore();
-            tetris.newQuestion();
-            //$("#bed").get(0).play();
+            if (playing) {
+                // pause
+                $(".start").text("Play");
+                playing = false;
+                paused = true;
+                $(".stage .bar:first").pause();
+            } else {
+                if (paused) {
+                    $(".stage .bar:first").resume();
+                    paused = false;
+                    playing = true;
+                    $(".start").text("Pause");
+                } else {
+                    // play
+                    playing = true;
+                    $(".start").text("Pause");
+                    tetris.updateScore();
+                    tetris.newQuestion();
+                    $("#bed").get(0).play();
+                }
+            }
         },
 
         newQuestion: function () {
