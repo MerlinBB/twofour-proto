@@ -1048,11 +1048,11 @@
         },
 
         gameover: function (completed) {
-            var message = (completed === true) ? "Complete!\nScore: " + score : "Game Over!\nScore: " + score;
+            var message = (completed === true) ? "Complete!<br>Score: " + score : "Game Over<br>Score: " + score;
 
             $("<div>", {
                 class: "message",
-                text: message
+                html: message
             }).appendTo("body");
 
             setTimeout(function () {
