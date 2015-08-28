@@ -923,6 +923,7 @@
             $(".question .inner").text("");
             $(".question-sub .inner").text("");
             $(".stage").empty();
+
             var music = $("#bed").get(0);
             music.pause();
             music.currentTime = 0;
@@ -931,7 +932,7 @@
         start: function () {
             tetris.updateScore();
             tetris.newQuestion();
-            $("#bed").get(0).play();
+            //$("#bed").get(0).play();
         },
 
         newQuestion: function () {
@@ -952,7 +953,6 @@
 
         keyHit: function (e) {
             var answer;
-
             switch (e.keyCode) {
             case 49: // 1
             case 65: // a
@@ -973,6 +973,11 @@
             case 70: // f
                 answer = 4;
                 break;
+            case 32:
+                answer = false;
+                break;
+            default:
+                return false;
             }
 
             if (answer) {
@@ -987,9 +992,9 @@
 
         answerChosen: function (i) {
             var answer = $(".answer:nth-child(" + i + ")");
+
             if ($(answer).data("correct")) {
-                $(answer).addClass("correct");
-                tetris.correct();
+                tetris.correct(answer);
             } else {
                 tetris.incorrect();
             }
@@ -997,7 +1002,9 @@
 
         incorrect: function () {
             var pos = (incorrectAnswers * 10) + "%";
-            $(".stage .bar:first").stop().animate({ bottom: pos }, 400).addClass("incorrect");
+            $(".stage .bar:first").stop().addClass("incorrect").animate({ bottom: pos }, 400, function () {
+                $(this).find(".answer").fadeOut(1500);
+            });
 
             if (incorrectAnswers === rowsToFail) {
                 tetris.gameover(false);
@@ -1011,15 +1018,18 @@
             $("#incorrect").get(0).play();
         },
 
-        correct: function () {
+        correct: function (answer) {
             var q = questions[question];
 
             currentCorrectAnswers += 1;
 
             if (currentCorrectAnswers === q.num) {
+                $(answer).siblings(".selected").removeClass("selected").addClass("correct");
+                $(answer).addClass("correct");
                 // all answers given - next
                 score++;
                 tetris.updateScore();
+
 
                 $(".stage .bar:first").stop().animate({ left: "100%"}, 400, function () {
                     $(this).remove();
@@ -1029,6 +1039,7 @@
 
                 $("#correct").get(0).play();
             } else {
+                $(answer).addClass("selected");
                 var music = $("#select").get(0);
                 music.pause();
                 music.currentTime = 0;
