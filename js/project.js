@@ -1,7 +1,7 @@
 (function ($, window, document, undefined) {
     "use strict";
 
-    var questions = [
+    var Questions = [
         {
             question: "GRAMMY WINNER",
             num: 1,
@@ -865,10 +865,13 @@
     ];
        
 
-
-    var speed;
+    var questions; // this will be mutated, Questions remains
+    var speed1;
+    var speed2;
+    var speed3;
     var rowsToFail;
     var question = 0;
+    var questionsPerLevel = [0, 0, 0];
     var rows = 10;
     var score = 0;
     var incorrectAnswers = 0;
@@ -885,11 +888,18 @@
         "</div>" +
     "</div>";
 
+    var optT = "" +
+        "<% _.each(options, function (opt, i) { %>" +
+            "<option value=\"<%- i %>\" <%- (i === Math.floor(options.length / 2)) ? 'selected' : '' %>>" +
+                "<%- i %>" +
+            "</option>" +
+        "<% }); %>";
+
     var tetris = {
 
         init: function () {
-            questions = _.shuffle(questions);
             this.bindUIActions();
+            this.setLevels();
             this.setSpeed();
             this.setRowsToFail();
         },
@@ -899,12 +909,58 @@
             $(".start").on("click", function () { tetris.start(); });
             $(".speed").on("change", function () { tetris.setSpeed(); });
             $(".rows").on("change", function () { tetris.setRowsToFail(); });
+            $(".spreads").on("change", function () { tetris.updateLevels(); });
             $("body").on("click", ".answer", function (e) { tetris.answerClicked(e); });
             $(window).on("keyup", function (e) { tetris.keyHit(e); });
         },
 
+        setLevels: function () {
+            var data = {};
+            var template = _.template(optT);
+
+            data.options = _.where(Questions, { num: 1 });
+            $(".spread-single").prepend(template(data));
+
+            data.options = _.where(Questions, { num: 2 });
+            $(".spread-double").prepend(template(data));
+
+            data.options = _.where(Questions, { num: 3 });
+            $(".spread-triple").prepend(template(data));
+
+            tetris.updateLevels();
+        },
+
+        updateLevels: function () {
+            questionsPerLevel[1] = $(".spread-single").val();
+            questionsPerLevel[2] = $(".spread-double").val();
+            questionsPerLevel[3] = $(".spread-triple").val();
+
+            tetris.getQuestions();
+        },
+
+        getQuestions: function () {
+            // get questions from master list
+            questions = Questions;
+            // split them into categories in a temporary object
+            var temp = _.groupBy(questions, function (q) { return q.num; });
+            // clear our questions into an empty array
+            questions = [];
+
+            // for each category
+            _.each(temp, function (q, i) {
+                // randomise
+                temp[i] = _.shuffle(q);
+                // then trim to required length
+                temp[i] = _.first(temp[i], questionsPerLevel[i]);
+                // add this back into our questions array
+                questions = questions.concat(temp[i]);
+            });
+        },
+
         setSpeed: function (e) {
-            speed = $(".speed").val();
+            speed1 = $(".speed1").val();
+            speed2 = $(".speed2").val();
+            speed3 = $(".speed3").val();
         },
 
         setRowsToFail: function (e) {
@@ -968,10 +1024,11 @@
                 $(".question-sub .inner").text(q.num);
                 var template = _.template(answerT);
                 $(".stage").prepend(template(q));
-                tetris.animateBar();
+                tetris.animateBar(q.num);
             } else {
                 tetris.gameover(true);
             }
+
         },
 
         keyHit: function (e) {
@@ -1090,7 +1147,13 @@
             $(".score").text(score);
         },
 
-        animateBar: function () {
+        animateBar: function (level) {
+            var speed;
+
+            if (level === 1) { speed = speed1; }
+            if (level === 2) { speed = speed2; }
+            if (level === 3) { speed = speed3; }
+
             var bar = $(".stage .bar:first");
             var end = (incorrectAnswers * 10) + "%";
             var time = (rows - incorrectAnswers) * speed;
