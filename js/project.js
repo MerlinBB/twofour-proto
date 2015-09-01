@@ -3,23 +3,403 @@
 
     var Questions = [
         {
-            question: "GRAMMY WINNER",
-            num: 1,
+            question: "CURRENT HEADS OF STATE",
+            num: 3,
             answers: [
-                { title: "NICKELBACK", correct: false },
-                { title: "KATY PERRY", correct: false },
-                { title: "SAM SMITH", correct: true },
-                { title: "LED ZEPPELIN", correct: false }
+                { title: "ANGELA MERKEL", correct: true },
+                { title: "DAVID CAMERON", correct: true },
+                { title: "BARACK OBAMA", correct: true },
+                { title: "NICOLAS SARKOZY", correct: false }
             ]
         },
         {
-            question: "PRIME NUMBER",
-            num: 1,
+            question: "TWILIGHT SERIES BOOKS",
+            num: 3,
             answers: [
-                { title: "5", correct: false },
-                { title: "17", correct: true },
-                { title: "39", correct: false },
-                { title: "51", correct: false }
+                { title: "BREAKING DAWN", correct: true },
+                { title: "MOCKINGJAY", correct: false },
+                { title: "NEW MOON", correct: true },
+                { title: "ECLIPSE", correct: true }
+            ]
+        },
+        {
+            question: "PATRON SAINTS OF THE UK",
+            num: 3,
+            answers: [
+                { title: "ST DAVID", correct: true },
+                { title: "ST GEORGE", correct: true },
+                { title: "ST PATRICK", correct: false },
+                { title: "ST ANDREW", correct: true }
+            ]
+        },
+        {
+            question: "ROYAL PARKS OF LONDON",
+            num: 3,
+            answers: [
+                { title: "HYDE PARK", correct: true },
+                { title: "KENSINGTON GARDENS", correct: true },
+                { title: "BRECON BEACONS", correct: false },
+                { title: "ST JAMES'S PARK", correct: true }
+            ]
+        },
+        {
+            question: "BIG BROTHER PRESENTERS",
+            num: 3,
+            answers: [
+                { title: "RYLAN CLARK", correct: true },
+                { title: "BEN SHEPHARD", correct: false },
+                { title: "DERMOT O'LEARY", correct: true },
+                { title: "DAVINA MCCALL", correct: true }
+            ]
+        },
+        {
+            question: "ENGLISH CONSTITUENCIES",
+            num: 3,
+            answers: [
+                { title: "SHETLAND", correct: false },
+                { title: "ALDERSHOT", correct: true },
+                { title: "WELWYN HATFIELD", correct: true },
+                { title: "NEWBURY", correct: true }
+            ]
+        },
+        {
+            question: "BRITISH FASHION MODELS",
+            num: 3,
+            answers: [
+                { title: "MIRANDA KERR", correct: false },
+                { title: "KATE MOSS", correct: true },
+                { title: "NAOMI CAMPBELL", correct: true },
+                { title: "ROSIE HUNTINGTON-WHITELEY", correct: true }
+            ]
+        },
+        {
+            question: "GERMAN CITIES",
+            num: 3,
+            answers: [
+                { title: "STRASBOURG", correct: false },
+                { title: "HAMBURG", correct: true },
+                { title: "BONN", correct: true },
+                { title: "STUTTGART", correct: true }
+            ]
+        },
+        {
+            question: "AMERICAN RIVERS",
+            num: 3,
+            answers: [
+                { title: "RIO GRANDE", correct: true },
+                { title: "YUKON", correct: true },
+                { title: "MISSISSIPPI", correct: true },
+                { title: "BROADBACK", correct: false }
+            ]
+        },
+        {
+            question: "US PRESIDENTIAL RUNNERS-UP",
+            num: 3,
+            answers: [
+                { title: "AL GORE", correct: true },
+                { title: "JOHN MCCAIN", correct: true },
+                { title: "HILARY CLINTON", correct: false },
+                { title: "MITT ROMNEY", correct: true }
+            ]
+        },
+        {
+            question: "OLYMPIC 100M GOLD MEDALLISTS",
+            num: 3,
+            answers: [
+                { title: "LINFORD CHRISTIE", correct: true },
+                { title: "FRANCIS OBIKWELU", correct: false },
+                { title: "USAIN BOLT", correct: true },
+                { title: "JUSTIN GATLIN", correct: true }
+            ]
+        },
+        {
+            question: "BOND FILMS",
+            num: 3,
+            answers: [
+                { title: "THUNDERBALL", correct: true },
+                { title: "DEVIL MAY CARE", correct: false },
+                { title: "DR NO", correct: true },
+                { title: "QUANTUM OF SOLACE", correct: true }
+            ]
+        },
+        {
+            question: "CELEBRITY BIG BROTHER CONTESTANTS",
+            num: 3,
+            answers: [
+                { title: "JAMELIA", correct: false },
+                { title: "JACK DEE", correct: true },
+                { title: "LES DENNIS", correct: true },
+                { title: "JO O'MEARA", correct: true }
+            ]
+        },
+        {
+            question: "EAST AFRICAN COUNTRIES",
+            num: 3,
+            answers: [
+                { title: "SOMALIA", correct: true },
+                { title: "ETHIOPIA", correct: true },
+                { title: "NIGERIA", correct: false },
+                { title: "ERITREA", correct: true }
+            ]
+        },
+        {
+            question: "STEPHEN KING NOVELS",
+            num: 3,
+            answers: [
+                { title: "CARRIE", correct: true },
+                { title: "THE COLOUR OF MAGIC", correct: false },
+                { title: "IT", correct: true },
+                { title: "THE GREEN MILE", correct: true }
+            ]
+        },
+        {
+            question: "AMERICAN FOOTBALL POSITIONS",
+            num: 3,
+            answers: [
+                { title: "QUARTERBACK", correct: true },
+                { title: "WIDE RECEIVER", correct: true },
+                { title: "FLY-HALF", correct: false },
+                { title: "LINEBACKER", correct: true }
+            ]
+        },
+        {
+            question: "FORMER SOVIET STATES",
+            num: 3,
+            answers: [
+                { title: "BELARUS", correct: true },
+                { title: "MOLDOVA", correct: true },
+                { title: "CROATIA", correct: false },
+                { title: "LITHUANIA", correct: true }
+            ]
+        },
+        {
+            question: "INTERNET SEARCH ENGINES",
+            num: 3,
+            answers: [
+                { title: "GOOGLE", correct: true },
+                { title: "BING", correct: true },
+                { title: "REDDIT", correct: false },
+                { title: "YAHOO", correct: true }
+            ]
+        },
+        {
+            question: "80s VIDEO GAMES",
+            num: 3,
+            answers: [
+                { title: "DONKEY KONG", correct: true },
+                { title: "SUPER MARIO", correct: true },
+                { title: "POKEMON", correct: false },
+                { title: "ZELDA", correct: true }
+            ]
+        },
+        {
+            question: "CHINESE MARTIAL ARTS",
+            num: 3,
+            answers: [
+                { title: "KRAV MAGA", correct: false },
+                { title: "PRAYING MANTIS", correct: true },
+                { title: "MONKEY FIST", correct: true },
+                { title: "WHITE EYEBROW", correct: true }
+            ]
+        },
+        {
+            question: "FELINES",
+            num: 3,
+            answers: [
+                { title: "PANTHER", correct: true },
+                { title: "COUGAR", correct: true },
+                { title: "LION", correct: true },
+                { title: "COYOTE", correct: false }
+            ]
+        },
+        {
+            question: "LATIN DANCE STYLES",
+            num: 3,
+            answers: [
+                { title: "SALSA", correct: true },
+                { title: "RUMBA", correct: true },
+                { title: "WALTZ", correct: false },
+                { title: "TANGO", correct: true }
+            ]
+        },
+        {
+            question: "REPTILES",
+            num: 2,
+            answers: [
+                { title: "SNAKE", correct: true },
+                { title: "FROG", correct: false },
+                { title: "NEWT", correct: false },
+                { title: "GECKO", correct: true }
+            ]
+        },
+        {
+            question: "PREMIER LEAGUE WINNERS",
+            num: 2,
+            answers: [
+                { title: "CHELSEA", correct: true },
+                { title: "BLACKBURN", correct: true },
+                { title: "NEWCASTLE", correct: false },
+                { title: "MIDDLESBOROUGH", correct: false }
+            ]
+        },
+        {
+            question: "BRITISH CAR MAKERS",
+            num: 2,
+            answers: [
+                { title: "FORD", correct: false },
+                { title: "LAMBORGHINI", correct: false },
+                { title: "ROLLS-ROYCE", correct: true },
+                { title: "JAGUAR", correct: true }
+            ]
+        },
+        {
+            question: "US SITCOMS",
+            num: 2,
+            answers: [
+                { title: "COMMUNITY", correct: true },
+                { title: "PEEP SHOW", correct: false },
+                { title: "VEEP", correct: true },
+                { title: "THE THICK OF IT", correct: false }
+            ]
+        },
+        {
+            question: "VERBS",
+            num: 2,
+            answers: [
+                { title: "HAVE", correct: true },
+                { title: "SAD", correct: false },
+                { title: "UNICORN", correct: false },
+                { title: "LOAD", correct: true }
+            ]
+        },
+        {
+            question: "OLD TESTAMENT BOOKS",
+            num: 2,
+            answers: [
+                { title: "JOHN", correct: false },
+                { title: "GENESIS", correct: true },
+                { title: "CORINTHIANS", correct: false },
+                { title: "PSALMS", correct: true }
+            ]
+        },
+        {
+            question: "DINOSAURS",
+            num: 2,
+            answers: [
+                { title: "TYRANNOSAURUS REX", correct: true },
+                { title: "PTERODACTYL", correct: true },
+                { title: "INDOMINUS REX", correct: false },
+                { title: "RHEDOSAURUS", correct: false }
+            ]
+        },
+        {
+            question: "GUITARISTS",
+            num: 2,
+            answers: [
+                { title: "TRAVIS BARKER", correct: false },
+                { title: "SLASH", correct: true },
+                { title: "QUESTLOVE", correct: false },
+                { title: "EDDIE VAN HALEN", correct: true }
+            ]
+        },
+        {
+            question: "STAR SIGNS",
+            num: 2,
+            answers: [
+                { title: "ORION", correct: false },
+                { title: "ANDROMEDA", correct: false },
+                { title: "TAURUS", correct: true },
+                { title: "LEO", correct: true }
+            ]
+        },
+        {
+            question: "FIBONACCI NUMBERS",
+            num: 2,
+            answers: [
+                { title: "8", correct: true },
+                { title: "17", correct: false },
+                { title: "4", correct: false },
+                { title: "21", correct: true }
+            ]
+        },
+        {
+            question: "BRITISH MOUNTAINS",
+            num: 2,
+            answers: [
+                { title: "BEN NEVIS", correct: true },
+                { title: "EVEREST", correct: false },
+                { title: "TABLE", correct: false },
+                { title: "SNOWDON", correct: true }
+            ]
+        },
+        {
+            question: "HARRY POTTER CHARACTERS",
+            num: 2,
+            answers: [
+                { title: "DOBBY", correct: true },
+                { title: "ELIZABETH SWANN", correct: false },
+                { title: "RON WEASLEY", correct: true },
+                { title: "JOHN CONNOR", correct: false }
+            ]
+        },
+        {
+            question: "MYTHICAL CREATURES",
+            num: 2,
+            answers: [
+                { title: "DODO", correct: false },
+                { title: "NARWHAL", correct: false },
+                { title: "CENTAUR", correct: true },
+                { title: "WEREWOLF", correct: true }
+            ]
+        },
+        {
+            question: "WATER SPORTS",
+            num: 2,
+            answers: [
+                { title: "CURLING", correct: false },
+                { title: "SAILING", correct: true },
+                { title: "WINDSURFING", correct: true },
+                { title: "LUGE", correct: false }
+            ]
+        },
+        {
+            question: "HOTEL CHAINS",
+            num: 2,
+            answers: [
+                { title: "MARRIOT", correct: true },
+                { title: "HILTON", correct: true },
+                { title: "FORD", correct: false },
+                { title: "MUSK", correct: false }
+            ]
+        },
+        {
+            question: "BRIT AWARD WINNERS",
+            num: 2,
+            answers: [
+                { title: "BLUR", correct: true },
+                { title: "ELLA HENDERSON", correct: false },
+                { title: "ESTELLE", correct: false },
+                { title: "SAM SMITH", correct: true }
+            ]
+        },
+        {
+            question: "NORTHERN IRELAND COUNTIES",
+            num: 2,
+            answers: [
+                { title: "KILDARE", correct: false },
+                { title: "LONDONDERRY", correct: true },
+                { title: "KILKENNY", correct: false },
+                { title: "ARMAGH", correct: true }
+            ]
+        },
+        {
+            question: "90s FILMS",
+            num: 2,
+            answers: [
+                { title: "PULP FICTION", correct: true },
+                { title: "MINORITY REPORT", correct: false },
+                { title: "THE MATRIX", correct: true },
+                { title: "COLD MOUNTAIN", correct: false }
             ]
         },
         {
