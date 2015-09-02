@@ -96,6 +96,26 @@ html {
         font-weight:normal;
         text-align:center;
     }
+    .nuke {
+        .position(absolute, 35px, 0, auto, auto);
+        background:linear-gradient(to bottom, #c6c8cb 0%, #edecef 40%, #6c6e71 100%);
+        border-radius:50%;
+        padding:7px;
+        .nuke-inner {
+            .square(50px);
+            overflow:hidden;
+            border-radius:50%;
+            cursor:pointer;
+            background:url(img/nuke.png) no-repeat center center;
+            background-size:110% auto;
+            line-height:140px;
+            color:#fff;
+            box-shadow:inset 0 2px 2px rgba(0, 0, 0, 0.5), inset 0 -2px 2px rgba(255, 255, 255, 0.8);
+            font-size:75px;
+            font-weight:normal;
+            text-align:center;
+        }
+    }
 }
 
 .stage-wrap {
@@ -161,6 +181,19 @@ html {
                 opacity:0;
             }
         }
+    }
+    &.winner {
+        background:linear-gradient(to bottom, #fbff91 0%, #fef000 10%, #cdaa00 50%, #faff6e 100%);
+        .answer {
+            opacity:0;
+        }
+    }
+    .amount {
+        text-align:center;
+        color:#000;
+        font-weight:900;
+        font-size:30px;
+        .position(absolute, 6px, 0, auto, 0, 1)
     }
 }
 
