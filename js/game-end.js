@@ -404,7 +404,6 @@
                 paused = true;
                 var time = $(".timer").text();
                 time = time.split(":");
-                console.log(parseInt(time[1], 10));
                 timeRemaining = parseInt(time[1], 10);
                 clearInterval(clock);
                 $(".stage .bar:first").pause();
@@ -577,6 +576,8 @@
 
         gameover: function (completed) {
             clearInterval(clock);
+
+            $(".stage .bar").stop();
 
             var message = (completed === true) ? "Complete!<br>Winnings: " + cashPrizes[currentPrize] : "Game Over<br>Winnings: " + cashPrizes[currentPrize];
 
