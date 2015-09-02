@@ -1252,7 +1252,7 @@
     var rowsToFail;
     var question = 0;
     var questionsPerLevel = [0, 0, 0];
-    var rows = 10;
+    var rows = 12;
     var score = 0;
     var incorrectAnswers = 0;
     var currentCorrectAnswers = 0;
@@ -1344,7 +1344,10 @@
         },
 
         setRowsToFail: function (e) {
-            rowsToFail = parseInt($(".rows").val(), 16);
+            rowsToFail = parseInt($(".rows").val(), 10);
+            var pos = Math.round((rowsToFail / rows) * 100) + "%";
+
+            $(".marker").css({ bottom: pos });
         },
 
         clear: function () {
@@ -1363,7 +1366,8 @@
 
             $(".question .inner").text("");
             $(".question-sub .inner").text("");
-            $(".stage").empty();
+            $(".stage .bar").remove();
+            $(".start").text("Play");
 
             var music = $("#bed").get(0);
             music.pause();

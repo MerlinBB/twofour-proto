@@ -41,9 +41,10 @@ html {
     background:#333;
 }
 
-@bh: 55px;
+@bh: 50px;
 @qh: 70px;
 @sh: 50px;
+@rows: 12;
 @bborder: 7px;
 
 .header {
@@ -96,6 +97,16 @@ html {
         font-weight:normal;
         text-align:center;
     }
+    .timer {
+        .position(absolute, -35px, 30px, auto, auto);
+        .square(140px);
+        background:url(img/score.png) no-repeat center center;
+        line-height:140px;
+        color:#fff;
+        font-size:30px;
+        font-weight:normal;
+        text-align:center;
+    }
     .nuke {
         .position(absolute, 35px, 0, auto, auto);
         background:linear-gradient(to bottom, #c6c8cb 0%, #edecef 40%, #6c6e71 100%);
@@ -118,6 +129,19 @@ html {
     }
 }
 
+.marker {
+    height:1px;
+    background:#0D74A0;
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    transition:all 0.2s;
+    .alt & {
+        background:#84084B;
+    }
+}
+
 .stage-wrap {
     padding:7px;
     border-radius:(@bh * 0.6);
@@ -126,11 +150,14 @@ html {
     .stage {
         background:url(img/bg.png) no-repeat center center;
         background-size:cover;
-        height:(@bh * 10);
+        height:(@bh * @rows);
         border-radius:(@bh / 2);
         position:relative;
         overflow:hidden;
         box-shadow:inset 0 1px 4px 1px rgba(0, 0, 0, 0.4);
+        &.alt {
+            background-image:url(img/bg-alt.png);
+        }
     }
 }
 

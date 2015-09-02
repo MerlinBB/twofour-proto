@@ -28,7 +28,7 @@
                 <div class="question">
                     <div class="inner"></div>
                 </div>
-                <div class="score"></div>
+                <div class="timer"></div>
                 <div class="nuke">
                     <div class="nuke-inner"></div>
                 </div>
@@ -37,7 +37,8 @@
     </div>
 
     <div class="stage-wrap">
-        <div class="stage">
+        <div class="stage alt">
+            <div class="marker"></div>
         </div>
     </div>
 
@@ -81,7 +82,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row mb-05x">
             <div class="col-sm-4">
                 <p>Level 1 Speed</p>
                 <select class="speed speed1">
@@ -110,6 +111,18 @@
                     <option value="1000" selected>Fast</option>
                     <option value="1500">Average</option>
                     <option value="2000">Sloth</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <p>Time</p>
+                <select class="time">
+                    <option value="30">30 Seconds</option>
+                    <option value="60" selected>1 Minute</option>
+                    <option value="90">1 Minute 30 seconds</option>
+                    <option value="120">2 Minutes</option>
                 </select>
             </div>
         </div>
