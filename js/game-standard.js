@@ -1362,7 +1362,7 @@
             paused = false;
             playing = false;
 
-            questions = _.shuffle(questions);
+            tetris.getQuestions();
 
             $(".question .inner").text("");
             $(".question-sub .inner").text("");
@@ -1491,7 +1491,7 @@
                 $(answer).siblings(".selected").removeClass("selected").addClass("correct");
                 $(answer).addClass("correct");
                 // all answers given - next
-                score++;
+                score += q.num;
                 tetris.updateScore();
 
 
