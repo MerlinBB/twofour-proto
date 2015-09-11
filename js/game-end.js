@@ -382,7 +382,7 @@
 
             clearInterval(clock);
 
-            questions = _.shuffle(questions);
+            tetris.getQuestions();
 
             $(".question .inner").text("");
             $(".question-sub .inner").text("");
